@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Components</title>
+  <link rel="icon" href="./public/favicon/favicon-48x48.png" />
+  <style>
+    @font-face {
+      font-family: "Saans";
+      src: url("./public/font/Saans-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #121212;
+      color: #ffffff;
+      font-family: "Saans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: -0.21px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .title {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: -0.21px;
+      color: #767676;
+      margin-bottom: 16px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       4 BUTTONS (ALL EXACT SAME SIZE: 36px HEIGHT, 13px FONT)
+       ═══════════════════════════════════════════════════════════════ */
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Shared dimensions & typography for all buttons */
+    .primary,
+    .secondary,
+    .accent,
+    .github {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 36px;
+      padding: 0 16px;
+      border-radius: 50px;
+      font-family: "Saans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 16px;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                  color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 150ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .primary:active,
+    .secondary:active,
+    .accent:active,
+    .github:active {
+      transform: translateY(1px);
+    }
+
+    /* 1. Primary Button */
+    .primary {
+      background: #2a2a2a;
+      color: #ffffff;
+      box-shadow:
+        0 1px 3px 0 rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+        inset 0 -1px 0 0 rgba(0, 0, 0, 0.06),
+        inset 0 0 0 1px rgba(196, 196, 196, 0.1);
+    }
+
+    .primary:hover {
+      background: #323232;
+    }
+
+    /* 2. Secondary Button */
+    .secondary {
+      background: #81ADEC;
+      color: #0a0a0a;
+      font-weight: 500;
+      box-shadow:
+        0 1px 3px 0 rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.35),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .secondary:hover {
+      background: #9dc0f2;
+      color: #0a0a0a;
+    }
+
+    /* 3. Accent Button (Sponsor pill style) */
+    .accent {
+      background: rgba(129, 173, 236, 0.16);
+      color: #81ADEC;
+    }
+
+    .accent:hover {
+      background: rgba(129, 173, 236, 0.24);
+    }
+
+    /* 4. GitHub Button */
+    .github {
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(237, 237, 237, 0.6);
+      padding: 0 14px;
+    }
+
+    .github:hover {
+      background: rgba(255, 255, 255, 0.10);
+      color: #ededed;
+    }
+
+    .github svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       EMPTY CARD DESIGN
+       ═══════════════════════════════════════════════════════════════ */
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      min-height: 240px;
+      padding: 32px;
+      border-radius: 24px;
+      background: #1a1a1a;
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      transition: background 200ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .card:hover {
+      background: #1c1c1c;
+    }
+
+    .card-text {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #c9c9c9;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+    }
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .card-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: #ededed;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-role {
+      font-size: 13px;
+      color: #737373;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Buttons -->
+    <div>
+      <div class="title">Buttons</div>
+      <div class="buttons">
+        <button class="primary">Primary</button>
+        <button class="secondary">Secondary</button>
+        <button class="accent">Accent</button>
+        <a class="github" href="#" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+          </svg>
+          <span>Star</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Empty Card -->
+    <div>
+      <div class="title">Card</div>
+      <div class="card">
+        <!-- Content Area -->
+        <p class="card-text">
+          <!-- Text goes here -->
+        </p>
+
+        <!-- Footer Area -->
+        <div class="card-footer">
+          <div class="card-info">
+            <div class="card-name"><!-- Name --></div>
+            <div class="card-role"><!-- Handle / Role --></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

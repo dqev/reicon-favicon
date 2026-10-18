@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>favicon.reicon.dev: any website's favicon &amp; OG image in one URL</title>
+<meta name="description" content="Hotlink any website's favicon or Open Graph image with one URL. Fast, edge-cached on Cloudflare, never broken." />
+<link rel="canonical" href="https://favicon.reicon.dev/" />
+<meta name="theme-color" content="#121212" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="reicon.dev" />
+<meta name="keywords" content="favicon, favicon api, favicon fetcher, og image, open graph image, website icon, favicon.reicon.dev" />
+
+<link rel="icon" href="./favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="./favicon-48x48.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="./android-chrome-192x192.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="favicon.reicon.dev" />
+<meta property="og:title" content="favicon.reicon.dev: any website's favicon &amp; OG image in one URL" />
+<meta property="og:description" content="Hotlink any website's favicon or Open Graph image with one URL. Fast, edge-cached on Cloudflare, and never broken." />
+<meta property="og:url" content="https://favicon.reicon.dev/" />
+<meta property="og:image" content="https://favicon.reicon.dev/og.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="any website's favicon and OG image in one URL" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="favicon.reicon.dev: any website's favicon &amp; OG image in one URL" />
+<meta name="twitter:description" content="Hotlink any website's favicon or Open Graph image with one URL. Fast, edge-cached on Cloudflare, and never broken." />
+<meta name="twitter:image" content="https://favicon.reicon.dev/og.png" />
+<meta name="twitter:image:alt" content="any website's favicon and OG image in one URL" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"favicon.reicon.dev","url":"https://favicon.reicon.dev/","description":"Hotlink any website's favicon or Open Graph image with one URL.","inLanguage":"en","publisher":{"@type":"Organization","name":"Reicon","url":"https://reicon.dev"}}
+</script>
+<style>
+  @font-face {
+    font-family: "Saans";
+    src: url("./font/Saans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #121212;
+    color: #ffffff;
+    font-family: "Saans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.21px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 24px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.21px;
+    color: #9a9a9a;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  header { text-align: center; }
+  .brand { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; font-weight: 500; color: #ededed; }
+  .brand .mark { width: 20px; height: 20px; display: block; flex-shrink: 0; }
+
+  h1 { font-size: 30px; font-weight: 500; line-height: 1.25; letter-spacing: -0.21px; margin-top: 22px; }
+  .lede { font-size: 15px; line-height: 1.6; color: #9a9a9a; margin-top: 12px; }
+  .lede code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: #c9c9c9; }
+
+  /* ── Tester ─────────────────────────────────────────────── */
+  .field {
+    display: flex; align-items: center; gap: 10px;
+    background: #1a1a1a; border-radius: 50px; padding: 0 18px; height: 36px;
+    max-width: 560px; margin: 0 auto;
+    transition: background 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .field:hover { background: #1c1c1c; }
+  .field:focus-within { background: #1e1e1e; }
+  .field-icon { width: 16px; height: 16px; color: #6b6b6b; flex-shrink: 0; }
+  .field input {
+    flex: 1; min-width: 0; background: transparent; border: 0; outline: none;
+    color: #ffffff; font: inherit; font-size: 14px;
+  }
+  .field input::placeholder { color: #5f5f5f; }
+
+  .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; max-width: 560px; margin: 12px auto 0; }
+  .code {
+    flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px; color: #81ADEC; background: #1a1a1a; border-radius: 50px;
+    height: 36px; line-height: 36px; padding: 0 16px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .hint { font-size: 12px; color: #6b6b6b; max-width: 560px; margin: 12px auto 0; text-align: center; }
+
+  /* ── Buttons ────────────────────────────────────────────── */
+  .primary, .secondary, .accent, .github {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    height: 36px; padding: 0 16px; border-radius: 50px;
+    font-family: "Saans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px; font-weight: 500; line-height: 16px;
+    border: 0; cursor: pointer; text-decoration: none; white-space: nowrap;
+    user-select: none; -webkit-tap-highlight-color: transparent;
+    transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .primary:active, .secondary:active, .accent:active, .github:active { transform: translateY(1px); }
+  .primary {
+    background: #2a2a2a; color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+      inset 0 -1px 0 0 rgba(0, 0, 0, 0.06),
+      inset 0 0 0 1px rgba(196, 196, 196, 0.1);
+  }
+  .primary:hover { background: #323232; }
+  .secondary {
+    background: #81ADEC; color: #0a0a0a; font-weight: 500;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.35),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  }
+  .secondary:hover { background: #9dc0f2; }
+  .accent { background: rgba(129, 173, 236, 0.16); color: #81ADEC; }
+  .accent:hover { background: rgba(129, 173, 236, 0.24); }
+  .github { background: rgba(255, 255, 255, 0.07); color: rgba(237, 237, 237, 0.6); padding: 0 14px; }
+  .github:hover { background: rgba(255, 255, 255, 0.10); color: #ededed; }
+  .github svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+  /* ── Card ───────────────────────────────────────────────── */
+  .card {
+    position: relative; width: 100%; max-width: 380px; min-height: 240px;
+    padding: 32px; border-radius: 24px; background: #1a1a1a;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+    display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+    margin: 0 auto;
+    transition: background 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card:hover { background: #1c1c1c; }
+  .card-preview { flex: 1; display: flex; align-items: center; justify-content: center; }
+  .card-preview img { width: 88px; height: 88px; border-radius: 18px; background: #232323; object-fit: cover; }
+  .card-preview.og { display: block; }
+  .card-preview.og img { width: 100%; height: auto; aspect-ratio: 1.91 / 1; border-radius: 12px; object-fit: cover; }
+  .card-footer { display: flex; align-items: center; gap: 12px; }
+  .card-avatar { width: 36px; height: 36px; border-radius: 9px; background: #232323; object-fit: cover; flex-shrink: 0; }
+  .card-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .card-name {
+    font-size: 13px; font-weight: 500; color: #ededed;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-role {
+    font-size: 13px; color: #737373;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-badge {
+    margin-left: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px; color: #81ADEC; background: rgba(129, 173, 236, 0.14);
+    padding: 3px 9px; border-radius: 50px; white-space: nowrap;
+  }
+
+  /* ── Gallery ────────────────────────────────────────────── */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .tile {
+    display: flex; align-items: center; gap: 10px; min-width: 0; cursor: pointer;
+    background: #1a1a1a; border-radius: 14px; padding: 12px;
+    transition: background 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tile:hover { background: #1c1c1c; }
+  .tile img { width: 28px; height: 28px; border-radius: 7px; background: #232323; object-fit: cover; flex-shrink: 0; }
+  .tile-text { min-width: 0; }
+  .tile-name {
+    font-size: 13px; font-weight: 500; color: #ededed;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .tile-domain {
+    font-size: 12px; color: #737373;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  /* ── Snippets ───────────────────────────────────────────── */
+  pre {
+    background: #1a1a1a; border-radius: 14px; padding: 16px 18px; overflow: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12.5px; line-height: 1.7; color: #c9c9c9;
+  }
+  pre .tag { color: #81ADEC; }
+  pre .url { color: #eaeaea; }
+  pre .cmt { color: #6b6b6b; }
+
+  footer { font-size: 12px; color: #5f5f5f; text-align: center; }
+  footer a { display: inline-flex; align-items: center; gap: 6px; color: #767676; text-decoration: none; }
+  footer a:hover { color: #81ADEC; }
+  footer img { width: 14px; height: 14px; display: block; }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 20px; }
+    h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand"><img class="mark" src="./favicon-48x48.png" alt="" width="20" height="20" />favicon.reicon.dev</div>
+      <h1>Any website's favicon or OG image, in one URL.</h1>
+      <p class="lede">
+        Type a domain to test it, then hotlink the icon or full-size OG image anywhere:
+        <code>&lt;img&gt;</code> tags, dashboards, bookmarks, link previews. No downloading, no hosting.
+      </p>
+    </header>
+
+    <section>
+      <div class="field">
+        <svg class="field-icon" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14" stroke-linecap="round"/></svg>
+        <input id="domain" value="reicon.dev" placeholder="example.com" spellcheck="false" autocomplete="off" />
+      </div>
+      <div class="row">
+        <span class="code" id="url">/reicon.dev</span>
+        <button class="primary" id="copy">Copy URL</button>
+        <button class="accent" id="toggle">Show OG image</button>
+      </div>
+      <p class="hint">Favicons are served fresh and cached, with a clean letter avatar as fallback.</p>
+    </section>
+
+    <section>
+      <div class="card">
+        <div class="card-preview" id="card-preview"><img id="card-img" src="/reicon.dev" alt="" /></div>
+        <div class="card-footer">
+          <img class="card-avatar" id="card-avatar" src="/reicon.dev" alt="" />
+          <div class="card-info">
+            <div class="card-name" id="card-name">Reicon</div>
+            <div class="card-role" id="card-role">reicon.dev</div>
+          </div>
+          <span class="card-badge" id="card-badge">favicon</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="title">Preview popular sites</div>
+      <div class="grid" id="grid">
+        <div class="tile" data-domain="github.com"><img src="/github.com" alt=""><div class="tile-text"><div class="tile-name">GitHub</div><div class="tile-domain">github.com</div></div></div>
+        <div class="tile" data-domain="google.com"><img src="/google.com" alt=""><div class="tile-text"><div class="tile-name">Google</div><div class="tile-domain">google.com</div></div></div>
+        <div class="tile" data-domain="youtube.com"><img src="/youtube.com" alt=""><div class="tile-text"><div class="tile-name">YouTube</div><div class="tile-domain">youtube.com</div></div></div>
+        <div class="tile" data-domain="wikipedia.org"><img src="/wikipedia.org" alt=""><div class="tile-text"><div class="tile-name">Wikipedia</div><div class="tile-domain">wikipedia.org</div></div></div>
+        <div class="tile" data-domain="stripe.com"><img src="/stripe.com" alt=""><div class="tile-text"><div class="tile-name">Stripe</div><div class="tile-domain">stripe.com</div></div></div>
+        <div class="tile" data-domain="vercel.com"><img src="/vercel.com" alt=""><div class="tile-text"><div class="tile-name">Vercel</div><div class="tile-domain">vercel.com</div></div></div>
+        <div class="tile" data-domain="figma.com"><img src="/figma.com" alt=""><div class="tile-text"><div class="tile-name">Figma</div><div class="tile-domain">figma.com</div></div></div>
+        <div class="tile" data-domain="notion.so"><img src="/notion.so" alt=""><div class="tile-text"><div class="tile-name">Notion</div><div class="tile-domain">notion.so</div></div></div>
+        <div class="tile" data-domain="apple.com"><img src="/apple.com" alt=""><div class="tile-text"><div class="tile-name">Apple</div><div class="tile-domain">apple.com</div></div></div>
+        <div class="tile" data-domain="spotify.com"><img src="/spotify.com" alt=""><div class="tile-text"><div class="tile-name">Spotify</div><div class="tile-domain">spotify.com</div></div></div>
+        <div class="tile" data-domain="discord.com"><img src="/discord.com" alt=""><div class="tile-text"><div class="tile-name">Discord</div><div class="tile-domain">discord.com</div></div></div>
+        <div class="tile" data-domain="x.com"><img src="/x.com" alt=""><div class="tile-text"><div class="tile-name">X</div><div class="tile-domain">x.com</div></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="title">Usage</div>
+      <pre><span class="cmt">&lt;!-- favicon, just drop it in --&gt;</span>
+<span class="tag">&lt;img</span> src=<span class="url">"https://favicon.reicon.dev/github.com"</span> width=<span class="url">"32"</span> height=<span class="url">"32"</span> alt=<span class="url">"GitHub"</span> <span class="tag">/&gt;</span>
+
+<span class="cmt">&lt;!-- the site's Open Graph image --&gt;</span>
+<span class="tag">&lt;img</span> src=<span class="url">"https://favicon.reicon.dev/github.com?og=true"</span> alt=<span class="url">"GitHub"</span> <span class="tag">/&gt;</span></pre>
+    </section>
+
+    <footer>
+      <a href="https://reicon.dev"><img src="reicon.svg" alt="" width="14" height="14" />A free service by reicon</a>
+    </footer>
+
+  </div>
+
+<script>
+  (function () {
+    var base = location.origin;
+    var input = document.getElementById("domain");
+    var urlEl = document.getElementById("url");
+    var copyBtn = document.getElementById("copy");
+    var toggle = document.getElementById("toggle");
+    var cardPreview = document.getElementById("card-preview");
+    var cardImg = document.getElementById("card-img");
+    var cardAvatar = document.getElementById("card-avatar");
+    var cardName = document.getElementById("card-name");
+    var cardRole = document.getElementById("card-role");
+    var cardBadge = document.getElementById("card-badge");
+    var og = false;
+
+    var FALLBACK = "data:image/svg+xml," + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">' +
+      '<rect width="64" height="64" rx="14" fill="#232323"/>' +
+      '<circle cx="32" cy="25" r="7" fill="#5c5c5c"/>' +
+      '<path d="M18 52c2.4-9.5 8-14 14-14s11.6 4.5 14 14z" fill="#5c5c5c"/></svg>'
+    );
+
+    function guard(img) {
+      img.onerror = function () { this.onerror = null; this.src = FALLBACK; };
+      if (img.complete && img.naturalWidth === 0) img.src = FALLBACK;
+    }
+    [cardImg, cardAvatar].forEach(guard);
+    Array.prototype.forEach.call(document.querySelectorAll(".tile img"), guard);
+
+    function normalize(v) {
+      v = (v || "").trim().replace(/^https?:\/\//i, "").replace(/^\/+/, "");
+      return v.split(/[/?#]/)[0];
+    }
+
+    function nameFor(d) {
+      var parts = d.split(".");
+      var s = parts.length >= 2 ? parts[parts.length - 2] : parts[0];
+      if (!s || s.length <= 3) s = parts[0];
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    function render() {
+      var d = normalize(input.value);
+      var suffix = og ? "?og=true" : "";
+      var full = d ? base + "/" + d + suffix : base + "/";
+
+      urlEl.textContent = full;
+      cardBadge.textContent = og ? "og:image" : "favicon";
+      toggle.textContent = og ? "Show favicon" : "Show OG image";
+      cardPreview.classList.toggle("og", og && !!d);
+
+      if (!d) {
+        cardImg.src = FALLBACK;
+        cardAvatar.src = FALLBACK;
+        cardName.textContent = "Nothing yet";
+        cardRole.textContent = "Type a domain above";
+        return;
+      }
+
+      cardImg.src = full;
+      cardAvatar.src = base + "/" + d;
+      cardName.textContent = nameFor(d);
+      cardRole.textContent = d;
+    }
+
+    input.addEventListener("input", render);
+    toggle.addEventListener("click", function () { og = !og; render(); });
+
+    copyBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(urlEl.textContent).then(function () {
+        copyBtn.textContent = "Copied";
+        setTimeout(function () { copyBtn.textContent = "Copy URL"; }, 1400);
+      });
+    });
+
+    document.getElementById("grid").addEventListener("click", function (e) {
+      var tile = e.target.closest(".tile");
+      if (!tile) return;
+      input.value = tile.getAttribute("data-domain");
+      og = false;
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    render();
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  // https://developers.cloudflare.com/workers/wrangler/configuration/
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "favicon-reicon",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-01-01",
+  "assets": {
+    "directory": "public"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "ratelimits": [
+    {
+      "name": "RL_IMG",
+      "namespace_id": "1001",
+      "simple": { "limit": 120, "period": 60 }
+    },
+    {
+      "name": "RL_META",
+      "namespace_id": "1002",
+      "simple": { "limit": 30, "period": 60 }
+    }
+  ],
+  "routes": [{ "pattern": "favicon.reicon.dev", "custom_domain": true }]
+}
